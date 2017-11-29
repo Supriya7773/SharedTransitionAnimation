@@ -17,6 +17,7 @@
 		F405C08F1FCE8F410085DBAB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F405C08E1FCE8F410085DBAB /* DetailViewController.swift */; };
 		F405C0921FCE8FFA0085DBAB /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F405C0911FCE8FFA0085DBAB /* HomeTableViewCell.swift */; };
 		F428E45C1FCEACAE00E8B11E /* RMPZoomTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = F428E45A1FCEACAE00E8B11E /* RMPZoomTransitionAnimator.m */; };
+		F4A9CBE81FCEC6E4004C43C4 /* SPMTransitionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A9CBE71FCEC6E4004C43C4 /* SPMTransitionAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		F428E4561FCEAC3300E8B11E /* SampleAnimation-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SampleAnimation-Bridging-Header.h"; sourceTree = "<group>"; };
 		F428E45A1FCEACAE00E8B11E /* RMPZoomTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMPZoomTransitionAnimator.m; sourceTree = "<group>"; };
 		F428E45B1FCEACAE00E8B11E /* RMPZoomTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMPZoomTransitionAnimator.h; sourceTree = "<group>"; };
+		F4A9CBE71FCEC6E4004C43C4 /* SPMTransitionAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPMTransitionAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 		F428E4551FCEABD900E8B11E /* Animation */ = {
 			isa = PBXGroup;
 			children = (
+				F4A9CBE71FCEC6E4004C43C4 /* SPMTransitionAnimation.swift */,
 				F428E45B1FCEACAE00E8B11E /* RMPZoomTransitionAnimator.h */,
 				F428E45A1FCEACAE00E8B11E /* RMPZoomTransitionAnimator.m */,
 			);
@@ -297,6 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4A9CBE81FCEC6E4004C43C4 /* SPMTransitionAnimation.swift in Sources */,
 				F405C08F1FCE8F410085DBAB /* DetailViewController.swift in Sources */,
 				F405C05E1FCE8EAB0085DBAB /* AppDelegate.swift in Sources */,
 				F428E45C1FCEACAE00E8B11E /* RMPZoomTransitionAnimator.m in Sources */,

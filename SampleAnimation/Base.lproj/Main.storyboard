@@ -6,8 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -91,18 +89,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ske-IN-wNl">
-                                <rect key="frame" x="56.5" y="212.5" width="262.5" height="262.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Ske-IN-wNl" secondAttribute="height" multiplier="1:1" id="miQ-a3-Ccr"/>
-                                </constraints>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ske-IN-wNl">
+                                <rect key="frame" x="50" y="70" width="275" height="547"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Ske-IN-wNl" firstAttribute="centerY" secondItem="PJ9-6M-l94" secondAttribute="centerY" id="elA-ih-THo"/>
-                            <constraint firstItem="Ske-IN-wNl" firstAttribute="centerX" secondItem="PJ9-6M-l94" secondAttribute="centerX" id="kyn-be-8gs"/>
-                            <constraint firstItem="Ske-IN-wNl" firstAttribute="width" secondItem="HCZ-b1-TGY" secondAttribute="width" multiplier="0.7" id="zeA-oW-gvV"/>
+                            <constraint firstItem="Ske-IN-wNl" firstAttribute="leading" secondItem="PJ9-6M-l94" secondAttribute="leading" constant="50" id="Pq5-Nn-8Mu"/>
+                            <constraint firstItem="PJ9-6M-l94" firstAttribute="bottom" secondItem="Ske-IN-wNl" secondAttribute="bottom" constant="50" id="kf2-3l-N3D"/>
+                            <constraint firstItem="PJ9-6M-l94" firstAttribute="trailing" secondItem="Ske-IN-wNl" secondAttribute="trailing" constant="50" id="mvC-A8-TIy"/>
+                            <constraint firstItem="Ske-IN-wNl" firstAttribute="top" secondItem="PJ9-6M-l94" secondAttribute="top" constant="50" id="xTa-ou-cnp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PJ9-6M-l94"/>
                     </view>

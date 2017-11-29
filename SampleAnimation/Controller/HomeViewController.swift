@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, RMPZoomTransitionAnimating {
+class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, UIViewControllerTransitioningDelegate, RMPZoomTransitionAnimating, RMPZoomTransitionDelegate {
     
 
     @IBOutlet weak var imagesTableView: UITableView!
@@ -16,13 +16,23 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var selectedImage: UIImageView!
     var selectedFrame: CGRect!
     
+    var destinationImage: UIImageView!
+    var destinationFrame: CGRect!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Home"
-//        self.navigationController?.delegate = self
+        
         imagesTableView.tableFooterView = UIView()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.delegate = self
+        self.transitioningDelegate = self
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -58,8 +68,17 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         selectedImage = selectedCell.cellImage
         selectedFrame = selectedCell.cellImage.frame
         
+        print("\n Before : \(selectedImage.frame)")
+        selectedFrame = tableView.convert(selectedCell.frame, from: self.view)
+        print("\n After : \(selectedFrame)")
+        
         let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "detailView") as! DetailViewController
+        
+//        destinationImage = detailVC.displayImageView
+//        destinationFrame = detailVC.displayImageView.frame
+        
         detailVC.selectedIndex = "\(indexPath.row)"
+        detailVC.transitioningDelegate = self
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
     
@@ -85,14 +104,24 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                               animationControllerFor operation: UINavigationControllerOperation,
                               from fromVC: UIViewController,
                               to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        let animator = RMPZoomTransitionAnimator(animationDurationForward: 1,
-                                                 forwardComplete: 2,
-                                                 backward: 2,
-                                                 backwardComplete: 1)
-        animator.goingForward = (operation == .push)
-        animator.sourceTransition = fromVC as? RMPZoomTransitionAnimating & RMPZoomTransitionDelegate
-        animator.destinationTransition = toVC as? RMPZoomTransitionAnimating & RMPZoomTransitionDelegate
-        return animator
+       
+        let spmAnimator = SPMTransitionAnimation()
+        spmAnimator.isPushingOperation = (operation == .push)
+        spmAnimator.animationType = .zoomba
+       
+        spmAnimator.fromAnimatableView = selectedImage
+        spmAnimator.fromAnimatableFrame = selectedFrame
+        
+//        spmAnimator.toAnimatableView = destinationImage
+//        spmAnimator.toAnimatableFrame = destinationFrame
+        
+        return spmAnimator
+        
+//        let animator = RMPZoomTransitionAnimator()
+//        animator.goingForward = (operation == .push)
+//        animator.sourceTransition = fromVC as? RMPZoomTransitionAnimating & RMPZoomTransitionDelegate
+//        animator.destinationTransition = toVC as? RMPZoomTransitionAnimating & RMPZoomTransitionDelegate
+//        return animator
     }
 
 }

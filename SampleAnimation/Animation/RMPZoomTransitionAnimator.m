@@ -101,6 +101,7 @@
     
     // Transition source of image to move me to add to the last
     UIImageView *sourceImageView = [self.sourceTransition transitionSourceImageView];
+    sourceImageView.frame = [self.sourceTransition transitionDestinationImageViewFrame];
     [containerView addSubview:sourceImageView];
     
     if (self.goingForward) {
